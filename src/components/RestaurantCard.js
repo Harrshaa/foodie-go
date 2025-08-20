@@ -2,6 +2,7 @@ import UserContext from "../utils/UserContext";
 import { useContext } from "react";
 const RestaurantCard=(props)=>{
 
+
     const data= useContext(UserContext);
     const {loggedInUser} = data;
   
@@ -14,6 +15,7 @@ const RestaurantCard=(props)=>{
         <h4>{props.resData.avgRating}</h4>
         <h4>{props.resData.costForTwo}</h4>
         <h4>{props.resData.sla.deliveryTime} mins</h4>
+        <h4>{loggedInUser}</h4>
        
      
 

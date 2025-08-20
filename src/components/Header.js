@@ -38,7 +38,7 @@ const HeaderComponent=()=>{
                         else setBtn("login");
                     }
                     }>{btn}</button>
-                    <li className="px-4">{loggedInUser}</li>
+                    <li className="px-4 font-bold">{loggedInUser}</li>
 
                 
                 </ul>

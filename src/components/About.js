@@ -2,6 +2,7 @@ import User from "./User";
 import UserClass from "./UserClass";
 import React from "react";
 import UserDummy from "./UserDummy";
+import UserContext from "../utils/UserContext";
 
 class About extends React.Component{
 
@@ -32,6 +33,10 @@ class About extends React.Component{
             <div className="about">
             <h1>About</h1>
             <h2>This is built Harrshaa</h2>
+            <div>
+                LoggedInuser 
+                <UserContext.Consumer>{({loggedInUser})=><h1>{loggedInUser}</h1>}</UserContext.Consumer>
+            </div>
             {/* <User name= {"Harsha (function)"} location={"Hyderabad (function)"} /> */}
             <UserClass name={"Harsha (class)"} location={"Hyderabad (class)"} />
             <UserDummy name={"Harrshaa"} location={"Gachibowli"}/>

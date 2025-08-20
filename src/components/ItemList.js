@@ -1,5 +1,6 @@
 import { CDN_URL } from "../utils/constants";
 const ItemList=(props)=>{
+    const {dummy}=props;
     const items = props?.data || [];
     console.log(items)
 
@@ -7,6 +8,7 @@ const ItemList=(props)=>{
         console.log("clicked")
 
     }
+    console.log(dummy);
    
 
 
@@ -27,8 +29,8 @@ const ItemList=(props)=>{
                     <p className="text-md">{item.card.info.description}</p>
                     </div>
 
-                    <div className="w-3/12 p-4" onClick={()=>handleClick()}>
-                        <button className="bg-gray-200 absolute text-sm" >+ Add</button>
+                    <div className="w-3/12 p-4">
+                        <button className="bg-gray-200 absolute text-sm" onClick={()=>handleClick()}>+ Add</button>
                         <img className="w-full" src={CDN_URL + item.card.info.imageId }></img>
                     </div>
 

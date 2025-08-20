@@ -9,7 +9,7 @@ const Body=()=>{
     const [restaurantList, setRestaurantList] = useState([]);
     const [searchtext,setSearchtext]=useState("");
     const [filteredList,setFilteredList]=useState([]);
-    const {setUserName,loggedInUser} =useContext(UserContext)
+  
 
     console.log(restaurantList);
 
@@ -39,7 +39,7 @@ const Body=()=>{
         <div className="body">
             <div className="filter flex">
 
-              <div className="search m-4 p-4">
+              <div className=" m-4 p-4 flex items-center">
                 <input className="border border-solid border-black rounded-lg" type="text" value={searchtext}
                 onChange={(e)=>{
                   setSearchtext(e.target.value);
@@ -54,7 +54,7 @@ const Body=()=>{
                 }}>Search</button>
               </div>
 
-              <div className="m-4 p-4">
+              <div className="m-4 p-4 flex items-center">
               <button className="px-4 py-2 mx-4 bg-pink-50 rounded-lg" onClick={()=>{
                 const filtered= restaurantList.filter((item)=>{
                   return item.info.avgRating>4.5
@@ -66,18 +66,21 @@ const Body=()=>{
            
               }}>Filter best Restaurant</button>
 
+              
+
                 
               </div>
+
+              {/* <div className="m-4 p-4 flex items-center">
+                <label>Username : </label>
+
+               <input className="border border-black"/>
+              </div> */}
 
 
            
 
-           {/* <input onChange={(e)=>
-            setUserName(e.target.value)
-
-
-           }/> */}
-
+       
             </div>
 
            
