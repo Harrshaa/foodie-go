@@ -10,6 +10,8 @@ const RestaurantMenu=()=>{
     const {resId} =useParams();
     const resInfo = useRestaurantMenu(resId);
     console.log(resInfo)
+
+    const [showItems,setShowItems] = useState(0);
    
     
 const cards = resInfo?.data?.cards || [];
@@ -35,9 +37,15 @@ const cards = resInfo?.data?.cards || [];
         <div className="text-center">
             <h1 className="font-bold m-6 text-2xl">{name}</h1>
             <h3 className="font-bold text-lg">{(cuisines || []).join(", ")} - {costForTwoMessage}</h3>
-
-            {categories.map((categories)=> <RestaurantCategory  key={categories?.card?.card?.title} data={categories?.card?.card}/>
              
+            {/* Controlled Components  */}
+
+            {categories.map((categories,index)=> <RestaurantCategory  
+            key={categories?.card?.card?.title} 
+            data={categories?.card?.card}
+            showItems={index === showItems ? true : false}
+            setShowItems={()=>setShowItems(index)}
+            />
             )}
        
         </div>
