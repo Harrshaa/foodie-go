@@ -1,9 +1,9 @@
 import { useEffect, useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
-import About from "./About";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const HeaderComponent=()=>{
     const isonline = useOnlineStatus();
@@ -18,6 +18,13 @@ const HeaderComponent=()=>{
         console.log("use effect called");
 
     },)
+
+    //selector
+    //Subscribing to the store using selector
+    const cartItems = useSelector((store)=> store.cart.items);
+    console.log(cartItems);
+
+
     return(
         <div className="flex justify-between bg-pink-50 shadow-md">
             <div >
@@ -32,13 +39,15 @@ const HeaderComponent=()=>{
                     <li className="px-4"><Link to="/">Home</Link></li>
                     <li className="px-4"><Link to="/about">About</Link></li>
                     <li className="px-4"><Link to="/contact">Contact</Link></li>
-                    <li className="px-4">Cart</li>
+                    <li className="px-4 font-bold text-xl"><Link to="/cart">Cart</Link></li>
+                    
                     <button className="login-btn" onClick={()=>{
                         if(btn === "login") setBtn("logout");
                         else setBtn("login");
                     }
                     }>{btn}</button>
                     <li className="px-4 font-bold">{loggedInUser}</li>
+                    
 
                 
                 </ul>

@@ -1,7 +1,6 @@
-import { useState } from "react";
 import ItemList from "./ItemList";
 const RestaurantCategory=({data,showItems,setShowItems,dummy})=>{
-    // console.log(props);
+ 
    const handleAccordian=()=>{
         setShowItems();
 
