@@ -9,9 +9,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocery from "./components/Grocery";
 import UserContext from "./utils/UserContext";
 import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
-import UserContext from "./utils/UserContext";
 
-import appStore from "./utils/appStore";
+
+
 
 const Grocery = lazy(()=>{
 
@@ -21,16 +21,16 @@ const App =()=>{
    
 
     return(
-        <Provider store={appStore}>
-        <UserContext.Provider value={{loggedInUser:"Harsha"}}>
+   
+   
         <div className="app">
-        <UserContext.Provider value={{loggedInUser: "Harrshaa"}}>
+       
         <HeaderComponent/>
-        </UserContext.Provider>
+    
         <Outlet/>
         </div>
-        </UserContext.Provider>
-        </Provider>
+
+
     )
 }
 
