@@ -21,11 +21,12 @@ const Body=()=>{
 
     const fetchData = async () => {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5366218&lng=78.4844811&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.5366218&lng=78.4844811&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://namastedev.com/api/v1/listRestaurants"
       );
       const json = await data.json();
       const restaurants =
-        json.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+        json.data?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
       setRestaurantList(restaurants);
       setFilteredList(restaurants)
     };
